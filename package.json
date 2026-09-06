@@ -1,10 +1,12 @@
 {
   "name": "guiderail",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": true,
   "description": "Save, revisit and export ChatGPT replies as local Markdown notes.",
   "license": "MIT",
-  "engines": { "node": ">=22.12.0" },
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -26,6 +28,8 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@types/turndown": "^5.0.6",
+    "jsdom": "25.0.1",
+    "postcss": "8.5.28",
     "typescript": "~5.7.3",
     "vite": "^6.4.1",
     "vitest": "^3.2.4",

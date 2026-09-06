@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "GuideRail",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "收藏和找回 ChatGPT 长回复，在侧栏或新标签页阅读，并导出到 Obsidian。",
   "minimum_chrome_version": "116",
   "permissions": [

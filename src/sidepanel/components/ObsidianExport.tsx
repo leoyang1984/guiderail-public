@@ -26,7 +26,7 @@ export function ObsidianExport({ sources, label }: { sources: MessageSource[]; l
       try { await storeDirectory(next); setNotice('目录已保存。'); }
       catch { setNotice('本次可导出，但目录未能记住，下次需要重新选择。'); }
     } catch (error) {
-      setNotice(error instanceof DOMException && error.name === 'AbortError' ? '已取消选择。' : '无法选择目录，请重试；也可打开一条收藏，使用顶部“在新标签页阅读”后选择。');
+      setNotice(error instanceof DOMException && error.name === 'AbortError' ? '已取消选择。' : '无法选择目录，请重试；也可打开一条收藏，在“更多操作”中打开“在新标签页阅读”后选择。');
     } finally { lock.current = false; setWorking(false); }
   }
   async function exportReplies() {
@@ -53,7 +53,7 @@ export function ObsidianExport({ sources, label }: { sources: MessageSource[]; l
     <p className="muted">目录：{loading ? '正在读取…' : directory?.name ?? '未选择'}</p>
     <div className="actions"><button disabled={loading || working || !picker} onClick={() => { void choose(); }}>{directory ? '更换文件夹' : '选择文件夹'}</button>
       <button disabled={loading || working || !directory || !sources.length} onClick={() => { void exportReplies(); }}>{working ? '处理中…' : label}</button></div>
-    {!picker && <p role="status">当前页面不支持目录选择，可打开一条收藏，使用顶部“在新标签页阅读”后选择。</p>}
+    {!picker && <p role="status">当前页面不支持目录选择，可打开一条收藏，在“更多操作”中打开“在新标签页阅读”后选择。</p>}
     {notice && <p role="status">{notice}</p>}
   </details>;
 }
