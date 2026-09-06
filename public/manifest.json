@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "GuideRail",
+  "version": "0.4.0",
+  "description": "收藏和找回 ChatGPT 长回复，在侧栏或新标签页阅读，并导出到 Obsidian。",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "sidePanel",
+    "tabs",
+    "storage"
+  ],
+  "action": {
+    "default_title": "Open GuideRail"
+  },
+  "background": {
+    "service_worker": "assets/service-worker.js",
+    "type": "module"
+  },
+  "side_panel": {
+    "default_path": "src/sidepanel/index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*"
+      ],
+      "js": [
+        "assets/messages.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
