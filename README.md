@@ -1,5 +1,133 @@
 # GuideRail
 
+[English](#english) | [简体中文](#简体中文)
+
+---
+
+<span id="english"></span>
+
+## English
+
+GuideRail is a **local-first** Chrome sidepanel extension + Obsidian desktop companion plugin: Save valuable ChatGPT responses and generated images directly into your local Obsidian vault or disk folder with one click, enjoy immersive reading in the Chrome sidepanel, or jump back to the original response on the webpage anytime.
+
+No accounts, no cloud servers, and no third-party AI APIs. Your data stays 100% on your local machine.
+
+---
+
+### 📦 Releases & Downloads
+
+Please visit the **[Latest GitHub Releases](https://github.com/leoyang1984/guiderail-public/releases/latest)** to download the pre-built packages:
+
+- **`GuideRail-0.6.8-chrome-*.zip`**: Chrome browser extension package.
+- **`GuideRail-0.6.8-obsidian-companion-*.zip`**: Obsidian desktop companion plugin package.
+
+---
+
+### 🚀 Quick Start & Usage
+
+#### Step 1: Install the Chrome Extension
+1. Download `GuideRail-0.6.8-chrome-*.zip` from [Releases](https://github.com/leoyang1984/guiderail-public/releases/latest) and extract it to a permanent local folder (e.g. your documents or tools directory);
+2. Open `chrome://extensions` in your Chrome address bar;
+3. Enable **"Developer mode"** in the top-right corner;
+4. Click **"Load unpacked"** in the top-left corner and select the extracted folder;
+5. Pin **GuideRail** to your browser toolbar via the puzzle icon.
+
+#### Step 2: Install the Obsidian Companion Plugin (Recommended)
+1. Download `GuideRail-0.6.8-obsidian-companion-*.zip` from [Releases](https://github.com/leoyang1984/guiderail-public/releases/latest);
+2. Open your Obsidian Vault directory and navigate to `.obsidian/plugins/`;
+3. Create a folder named `obsidian-companion` under `plugins/`, and extract `main.js` and `manifest.json` into it:
+   ```text
+   <Your Vault Root>/
+     .obsidian/
+       plugins/
+         obsidian-companion/
+           manifest.json
+           main.js
+   ```
+4. Open Obsidian, navigate to **Settings -> Community plugins**, reload the plugin list, find **GuideRail Companion**, and enable it.
+
+#### Step 3: Pair and Connect
+1. Open the **GuideRail Companion** settings panel in Obsidian:
+   - **Vault Root Folder**: Recommended to **leave empty**. Leaving it empty saves notes directly into the `收件箱/` (Inbox) directory in your Vault root;
+   - Click **[Generate Pairing Code]**; the 8-character code is **automatically copied to your clipboard** (a dedicated [Copy Code] button is also provided);
+2. Click the GuideRail icon in Chrome to open the sidepanel;
+3. In the sidepanel pairing view, paste the 8-character code and click **[Connect to Obsidian]**;
+4. The sidepanel will immediately show `Obsidian Companion (Connected: <Vault Name>)`, and the connection is complete!
+
+> *Note: If you do not use Obsidian, you can also click "Select Local Folder" in the sidepanel to directly grant permissions to any local folder on your disk.*
+
+#### Step 4: One-Click Clipping & Management in ChatGPT
+1. Open any `https://chatgpt.com/c/<conversation-id>` page (refresh any existing ChatGPT tabs after installing or updating the extension);
+2. Under any assistant reply, click the **"☆ 收藏" (Bookmark)** button injected by GuideRail;
+3. The button changes to **"✓ 已收藏" (Bookmarked)**; the Markdown note and response image attachments (stored in `attachments/`) are saved directly into your Obsidian Vault;
+4. Open the Chrome sidepanel:
+   - Read saved notes and images comfortably anytime;
+   - Click "Jump to Source" at the top to scroll straight to the original message on ChatGPT;
+   - Click "More actions" at the bottom right of any card to rename titles, create new folders, and move notes for organization;
+   - Click the palette icon in the top right to switch among 5 Bear-inspired themes (Light, Dark, Nordic Snow, Parchment, etc.).
+
+---
+
+### Core Features
+
+- **Immersive Reading & Jump to Source**: Read saved Markdown notes and images comfortably in the Chrome sidepanel; click "Jump to Source" at the top to scroll directly to the exact message on ChatGPT.
+- **Automatic Image Attachment Archiving**: Automatically captures images generated or displayed in ChatGPT responses, downloading them to `attachments/<note-id>/` with relative Markdown image links for offline viewing.
+- **Note Organization & Management**:
+  - New notes land in "收件箱" (Inbox) by default;
+  - Rename titles, create new folders, and move notes along with their attachments directly within the sidepanel;
+  - Filter notes by folder tags (`#All`, `#Inbox`, etc.).
+- **5 Bear-Inspired Themes**: Includes System, Red Graphite Light, Red Graphite Dark, Nordic Snow, and Parchment themes. Switch effortlessly via the palette icon in the sidepanel.
+- **Zero Cloud Dependencies & Local Privacy**: The Companion server binds exclusively to `127.0.0.1` loopback with 256-bit token authentication. No open public ports, no tracking, and zero data leaves your machine.
+
+---
+
+### Vault Directory Structure
+
+Files are organized in your Obsidian Vault or local folder as follows:
+
+```text
+My Vault/
+  .guiderail/
+    index.json              # Local note index cache
+  收件箱/                    # Inbox
+    <stable-id>.md          # Saved Markdown note
+    attachments/
+      <stable-id>/
+        0.png               # Captured response images
+        1.webp
+  Projects/                 # Custom folders organized via sidepanel
+    <stable-id>.md
+```
+
+- **Markdown Frontmatter**: Contains note metadata (title, source URL, conversation ID, message ID, timestamp).
+- **Relative Image Paths**: Fully compliant with Obsidian standard Markdown syntax `![image](attachments/<id>/0.png)`. Attachments migrate seamlessly when moving notes.
+- **Overwrite Protection**: Re-clipping or notes edited manually in Obsidian will never be silently overwritten.
+
+---
+
+### Troubleshooting (FAQ)
+
+1. **Clicking "Bookmark" shows "Please set up a notebook first"?**
+   - The extension has not been paired with a notebook yet. Open the GuideRail sidepanel from the Chrome toolbar and pair with Obsidian (or choose a local folder).
+2. **Cannot connect to Obsidian?**
+   - Ensure the Obsidian desktop app is running and the GuideRail Companion plugin is enabled in Obsidian settings.
+3. **No "Bookmark" button appears in ChatGPT after installation/update?**
+   - Refresh the ChatGPT tab (`F5` or `Cmd + R`) to allow the browser to load the latest content script.
+4. **What should I enter for "Vault Root Folder" in Obsidian settings?**
+   - Recommended to **leave it empty**. Leaving it empty saves notes directly to `收件箱/` (Inbox) at the Vault root.
+
+---
+
+### License
+
+This project's plugins are distributed under the [MIT License](LICENSE).
+
+---
+
+<span id="简体中文"></span>
+
+## 简体中文
+
 GuideRail 是一个**本地优先（Local-First）**的 Chrome 侧边栏扩展 + Obsidian 桌面配套插件：在 ChatGPT 中一键收藏有价值的回复与图片，直接保存到自己的本地 Obsidian 笔记库或普通文件夹，随时在侧栏沉浸阅读或定位回网页原文。
 
 没有账号体系、没有云端服务器，也不调用任何第三方 AI API，数据 100% 留在你的本地设备中。
