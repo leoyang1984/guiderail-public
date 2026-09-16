@@ -18,22 +18,22 @@ No accounts, no cloud servers, and no third-party AI APIs. Your data stays 100% 
 
 Please visit the **[Latest GitHub Releases](https://github.com/leoyang1984/guiderail-public/releases/latest)** to download the pre-built packages:
 
-- **`GuideRail-0.6.9-chrome-*.zip`**: Chrome browser extension package.
-- **`GuideRail-0.6.9-obsidian-companion-*.zip`**: Obsidian desktop companion plugin package.
+- **`GuideRail-0.7.0-chrome-*.zip`**: Chrome browser extension package.
+- **`GuideRail-0.7.0-obsidian-companion-*.zip`**: Obsidian desktop companion plugin package.
 
 ---
 
 ### 🚀 Quick Start & Usage
 
 #### Step 1: Install the Chrome Extension
-1. Download `GuideRail-0.6.9-chrome-*.zip` from [Releases](https://github.com/leoyang1984/guiderail-public/releases/latest) and extract it to a permanent local folder (e.g. your documents or tools directory);
+1. Download `GuideRail-0.7.0-chrome-*.zip` from [Releases](https://github.com/leoyang1984/guiderail-public/releases/latest) and extract it to a permanent local folder (e.g. your documents or tools directory);
 2. Open `chrome://extensions` in your Chrome address bar;
 3. Enable **"Developer mode"** in the top-right corner;
 4. Click **"Load unpacked"** in the top-left corner and select the extracted folder;
 5. Pin **GuideRail** to your browser toolbar via the puzzle icon.
 
 #### Step 2: Install the Obsidian Companion Plugin (Recommended)
-1. Download `GuideRail-0.6.9-obsidian-companion-*.zip` from [Releases](https://github.com/leoyang1984/guiderail-public/releases/latest);
+1. Download `GuideRail-0.7.0-obsidian-companion-*.zip` from [Releases](https://github.com/leoyang1984/guiderail-public/releases/latest);
 2. Open your Obsidian Vault directory and navigate to `.obsidian/plugins/`;
 3. Create a folder named `obsidian-companion` under `plugins/`, and extract `main.js` and `manifest.json` into it:
    ```text
@@ -138,22 +138,22 @@ GuideRail 是一个**本地优先（Local-First）**的 Chrome 侧边栏扩展 +
 
 请前往 **[GitHub Releases 最新版本](https://github.com/leoyang1984/guiderail-public/releases/latest)** 下载已编译打包的成品插件：
 
-- **`GuideRail-0.6.9-chrome-*.zip`**：Chrome 浏览器扩展程序安装包。
-- **`GuideRail-0.6.9-obsidian-companion-*.zip`**：Obsidian 桌面端配套插件包。
+- **`GuideRail-0.7.0-chrome-*.zip`**：Chrome 浏览器扩展程序安装包。
+- **`GuideRail-0.7.0-obsidian-companion-*.zip`**：Obsidian 桌面端配套插件包。
 
 ---
 
 ## 🚀 快速上手与使用方法
 
 ### 第一步：安装 Chrome 扩展
-1. 在 [Releases](https://github.com/leoyang1984/guiderail-public/releases/latest) 中下载 `GuideRail-0.6.9-chrome-*.zip`，解压到本地固定文件夹（如你的文档或工具目录）；
+1. 在 [Releases](https://github.com/leoyang1984/guiderail-public/releases/latest) 中下载 `GuideRail-0.7.0-chrome-*.zip`，解压到本地固定文件夹（如你的文档或工具目录）；
 2. 在 Chrome 浏览器地址栏打开 `chrome://extensions`；
 3. 打开右上角的 **「开发者模式」** 开关；
 4. 点击左上角的 **「加载已解压的扩展程序」**，选择刚才解压出来的文件夹；
 5. 点击 Chrome 工具栏右上角的拼图图标，将 **GuideRail** 固定到工具栏。
 
 ### 第二步：安装 Obsidian Companion 插件（推荐）
-1. 在 [Releases](https://github.com/leoyang1984/guiderail-public/releases/latest) 中下载 `GuideRail-0.6.9-obsidian-companion-*.zip`；
+1. 在 [Releases](https://github.com/leoyang1984/guiderail-public/releases/latest) 中下载 `GuideRail-0.7.0-obsidian-companion-*.zip`；
 2. 打开你的 Obsidian 笔记库（Vault）所在目录，进入 `.obsidian/plugins/` 目录；
 3. 新建名为 `obsidian-companion` 的文件夹，将压缩包内的 `main.js` 和 `manifest.json` 解压至该文件夹：
    ```text
